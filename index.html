@@ -3,9 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Solar</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Solar.</h1>
+    <img src="sigilwhite.png" alt="sigil" id="sigil">
+    <h1>Solar</h1>
+
+    <!-- date selector -->
+    <label for="datePicker">date:</label>
+    <input type="date" id="datePicker" title="Select a date">
+
+    <!-- timetable -->
+    <h2>timetable</h2>
+    <div id="timetable"></div>
+
+    <!-- journal -->
+    <h2>journal</h2>
+    <textarea id="journal" placeholder="Write your thoughts here..."></textarea>
+
+    <br>
+
+    <button id="saveBtn">save</button>
+    <button id="exportBtn">export as .txt</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
