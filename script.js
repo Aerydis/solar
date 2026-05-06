@@ -21,10 +21,10 @@ const timetable = {
     "lunch", "software", "(free period)", "A.C.E."
   ],
   saturday: [
-    "physics(14:00-16:30)", "korean(19:00-22:00)"
+    "physics academy(14:00-16:30)", "korean academy(19:00-22:00)"
   ],
   sunday: [
-    "chemistry(14:00-16:30)"
+    "chemistry academy(14:00-16:30)"
   ]
 };
 
