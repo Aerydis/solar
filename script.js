@@ -71,7 +71,7 @@ function saveEntry() {
   saveBtn.textContent = "saved";
   setTimeout(() => {
     saveBtn.textContent = "save locally";
-  }, 2000);
+  }, 500);
 }
 
 // ===== load journal =====
