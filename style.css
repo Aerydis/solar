@@ -34,6 +34,12 @@ button:hover {
   background: #3a4150;
 }
 
+header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 #timetable {
   margin-bottom: 20px;
   padding: 10px;
