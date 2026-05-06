@@ -68,9 +68,9 @@ function saveEntry() {
 
   localStorage.setItem("journal-" + date, text);
 
-  saveBtn.textContent = "Saved!";
+  saveBtn.textContent = "saved";
   setTimeout(() => {
-    saveBtn.textContent = "Save";
+    saveBtn.textContent = "save locally";
   }, 2000);
 }
 
