@@ -67,6 +67,11 @@ function saveEntry() {
   const text = journal.value;
 
   localStorage.setItem("journal-" + date, text);
+
+  saveBtn.textContent = "Saved!";
+  setTimeout(() => {
+    saveBtn.textContent = "Save";
+  }, 2000);
 }
 
 // ===== load journal =====
