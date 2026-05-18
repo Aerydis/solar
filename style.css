@@ -1,8 +1,12 @@
+:root {
+  color-scheme: light dark; 
+}
+
 body {
-  font-family: Arial, sans-serif;
+  background-color: light-dark(#F8FAFC, #0B132B);
+  color: light-dark(#747C92, #BFC1C2);
   margin: 20px;
-  background: #0f1115;
-  color: #e6e6e6;
+  font-family: Arial, sans-serif;
 }
 
 h1 {
@@ -15,8 +19,8 @@ textarea {
   margin-top: 10px;
   padding: 10px;
   font-size: 14px;
-  background: #1a1d24;
-  color: #fff;
+  background-color: light-dark(#F8FAFC, #1a1d24);
+  color: light-dark(#BFC1C2, #BFC1C2);
   border: 1px solid #333;
 }
 
@@ -24,14 +28,14 @@ button {
   margin-top: 10px;
   margin-right: 10px;
   padding: 8px 12px;
-  background: #2a2f3a;
-  color: white;
+  background-color: light-dark(#747C92, #3a4150);
+  color: light-dark(#BFC1C2, #BFC1C2);
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background: #3a4150;
+  background-color: light-dark(#3a4150, #747C92);
 }
 
 header {
@@ -43,13 +47,13 @@ header {
 #timetable {
   margin-bottom: 20px;
   padding: 10px;
-  background: #1a1d24;
+  background-color: light-dark(#F8FAFC, #1a1d24);
   border: 1px solid #333;
 }
 
-#sigil {
-    height: 100px;
-    background: url('sigil.png') no-repeat center center;
-    background-size: contain;
-    margin-top: 20px;
+.sigil img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    opacity: 0.8;
 }

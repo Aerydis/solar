@@ -8,7 +8,11 @@
 </head>
 <body>
     <header class = "header">
-        <img src="sigilwhite.png" alt="sigil" id="sigil">
+        <picture class="sigil">
+            <source srcset="sigilblack.png" media="(prefers-color-scheme: light)">
+            <source srcset="sigilwhite.png" media="(prefers-color-scheme: dark)">
+            <img src="sigilblack.png" alt="sigil">
+        </picture>
         <h1>Solar</h1>
     </header>
 
