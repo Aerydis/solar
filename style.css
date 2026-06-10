@@ -1,59 +1,134 @@
-:root {
-  color-scheme: light dark; 
-}
-
 body {
-  background-color: light-dark(#F8FAFC, #0B132B);
-  color: light-dark(#747C92, #BFC1C2);
-  margin: 20px;
-  font-family: Arial, sans-serif;
+  background-color: #eceef2;
+  color: #32393f;
+  margin: 16px;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 h1 {
-  margin-bottom: 10px;
+  margin-bottom: 4px;
+  color: #21272b;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 18px;
+  margin-bottom: 6px;
+  color: #4a5157;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
 }
 
 textarea {
   width: 100%;
-  height: 200px;
-  margin-top: 10px;
-  padding: 10px;
+  min-height: 160px;
+  margin-top: 8px;
+  padding: 8px;
   font-size: 14px;
-  background-color: light-dark(#F8FAFC, #1a1d24);
-  color: light-dark(#747C92, #BFC1C2);
-  border: 1px solid #333;
+  background-color: #f5f6f8;
+  color: #2b3137;
+  border: 1px solid #c7ccd1;
+  border-radius: 0;
 }
 
 button {
-  margin-top: 10px;
+  margin-top: 8px;
   margin-right: 10px;
   padding: 8px 12px;
-  background-color: light-dark(#747C92, #3a4150);
-  color: light-dark(#BFC1C2, #BFC1C2);
-  border: none;
+  background-color: #e5e8eb;
+  color: #2c343a;
+  border: 1px solid #c2c8cd;
+  border-radius: 0;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: light-dark(#3a4150, #747C92);
+  background-color: #dfe3e7;
 }
 
 header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: flex-end;
 }
 
 #timetable {
-  margin-bottom: 20px;
-  padding: 10px;
-  background-color: light-dark(#F8FAFC, #1a1d24);
-  border: 1px solid #333;
+  margin-bottom: 18px;
+  padding: 8px;
+  background-color: #ffffff;
+  border: 1px solid #d1d5d9;
 }
 
-.sigil img {
-    width: 120px;
-    height: 120px;
-    object-fit: contain;
-    opacity: 0.8;
+#timetable .slot {
+  display: grid;
+  grid-template-columns: 44px minmax(140px, 1fr) 3fr;
+  gap: 10px;
+  align-items: center;
+  padding: 6px 0;
+}
+
+#timetable .slot:nth-child(2n) {
+  background: transparent;
+}
+
+#timetable .slot-column {
+  display: flex;
+  align-items: center;
+  min-height: 28px;
+}
+
+#timetable .slot-column span {
+  display: block;
+  width: 100%;
+}
+
+#timetable .slot-period {
+  color: #6b7280;
+  font-weight: 600;
+}
+
+#timetable .slot-subject {
+  color: #343d45;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#timetable .period-note {
+  width: 100%;
+  height: 28px;
+  padding: 0;
+  font-size: 13px;
+  border: none;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: #1f2930;
+}
+
+#timetable .note-wrapper {
+  display: grid;
+  gap: 4px;
+}
+
+#timetable .note-label {
+  color: #6b7280;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+#timetable .period-note:focus {
+  outline: none;
+  border-bottom-color: #9ca3af;
+}
+
+#timetable hr {
+  border: none;
+  border-bottom: 1px solid #e3e6ea;
+  margin: 0;
+}
+
+#timetable .slot + hr {
+  margin-bottom: 0;
 }
