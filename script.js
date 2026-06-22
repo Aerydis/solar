@@ -245,6 +245,7 @@ datePicker.addEventListener("change", () => {
   loadEntry();
 });
 
+journal.addEventListener("input", saveEntry);
 saveBtn.addEventListener("click", saveEntry);
 exportBtn.addEventListener("click", exportEntry);
 copyScheduleBtn.addEventListener("click", copySchedule);
