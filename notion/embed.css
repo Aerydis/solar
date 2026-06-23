@@ -6,6 +6,6 @@ body{background:transparent;color:#ffffff;margin:0;font-family:Inter, ui-sans-se
 #embed-timetable{margin-top:12px;border:1px solid #e6e9ee;padding:8px;background:transparent}
 .slot{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center;padding:6px 0}
 .slot + .slot{border-top:1px solid #eef1f5}
-.slot-period{color:#6b7280;font-weight:600}
-.slot-subject{color:#0f1720;font-weight:500}
+.slot-period{color:#d8d8d8;font-weight:500}
+.slot-subject{color:#ffffff;font-weight:500}
 @media (max-width:420px){.slot{grid-template-columns:36px 1fr;padding:4px 0}.embed-container{padding:8px}}
