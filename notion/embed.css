@@ -1,9 +1,11 @@
-body{background:#f5f5f5;color:#111111;margin:0;font-family:ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:16px}
+body{background:#191919;color:#ffffff;margin:0;font-family:Courier New, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:12px}
 .embed-container{max-width:720px;margin:0 auto}
-.day-label{color:#6b7280;font-size:0.75rem;margin-bottom:10px;letter-spacing:0.02em}
-#embed-timetable{margin-top:0;border:1px solid #e5e7eb;padding:8px 0;background:#ffffff}
-.slot{display:grid;grid-template-columns:44px 1fr;gap:10px;align-items:flex-start;padding:14px 16px}
-.slot + .slot{border-top:1px solid #e5e7eb}
-.slot-period{color:#6b7280;font-size:0.9rem;font-weight:600}
-.slot-subject{color:#111111;font-weight:600}
-@media (max-width:420px){.slot{grid-template-columns:36px 1fr;padding:12px 14px}.embed-container{padding:12px}}
+.embed-header{display:flex;align-items:center;justify-content:space-between}
+.embed-header h1{font-size:1.2rem;margin:0}
+.day-label{color:#6b7280;font-size:0.9rem}
+#embed-timetable{margin-top:12px;border:0.1px solid #cecece;padding:12px;background:#191919}
+.slot{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center;padding:6px 0}
+.slot + .slot{border-top:0.2px solid #dbdbdb}
+.slot-period{color:#d8d8d8;font-weight:500}
+.slot-subject{color:#ffffff;font-weight:500}
+@media (max-width:420px){.slot{grid-template-columns:36px 1fr;padding:4px 0}.embed-container{padding:8px}}
