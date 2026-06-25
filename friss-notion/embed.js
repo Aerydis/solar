@@ -82,3 +82,5 @@ document.addEventListener('DOMContentLoaded', ()=>{
   // check once a minute for date change (covers midnight change)
   setInterval(checkAndUpdate, 60 * 1000);
 });
+
+// i love you friss <3
