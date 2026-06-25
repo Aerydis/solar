@@ -1,12 +1,12 @@
 // Simplified embeddable timetable for Notion
 const timetable = {
-  monday: { p1: "english", p2: "calculus", p3: "chemistry", p4: "korean", p5: "algebra", p6: "art", p7: "software" },
-  tuesday: { p1: "software", p2: "korean", p3: "algebra", p4: "(homeroom activities)", p5: "engineering", p6: "english", p7: "chemistry" },
-  wednesday: { p1: "english", p2: "korean", p3: "chemistry", p4: "calculus", p5: "sports science", p6: "algebra", p7: "engineering (free period)" },
-  thursday: { p1: "software (free period)", p2: "chemistry", p3: "calculus", p4: "korean", p5: "engineering", p6: "algebra", p7: "art" },
-  friday: { p1: "(homeroom activities)", p2: "calculus", p3: "engineering", p4: "english", p5: "software", p6: "(free period)", p7: "A.C.E." },
-  saturday: { p1: "physics academy(14:00-16:30)", p2: "korean academy(19:00-22:00)" },
-  sunday: { p1: "chemistry academy(14:00-16:30)" }
+  monday: { p1: "(free period)", p2: "ethics", p3: "geography", p4: "english", p5: "society", p6: "algebra", p7: "art" },
+  tuesday: { p1: "algebra", p2: "society", p3: "career", p4: "geography", p5: "inquiry", p6: "ethics", p7: "literature" },
+  wednesday: { p1: "inquiry", p2: "geography", p3: "english", p4: "ethics", p5: "literature", p6: "society", p7: "(free period)" },
+  thursday: { p1: "literature", p2: "inquiry",p3: "ethics", p4: "geography", p5: "english", p6: "art", p7: "algebra" },
+  friday: { p1: "inquiry", p2: "p.e.", p3: "literature", p4: "society", p5: "english", p6: "algebra", p7: "discussion" },
+  saturday: {},
+  sunday: {}
 };
 
 function getDayNameFromDate(date) {
