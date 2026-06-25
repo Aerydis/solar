@@ -33,6 +33,38 @@ function renderForDate(date) {
   container.innerHTML = html;
 }
 
+const THEME_STORAGE_KEY = 'solarEmbedTheme';
+
+function setTheme(theme) {
+  const body = document.body;
+  body.classList.toggle('dark', theme === 'dark');
+  const button = document.getElementById('themeToggle');
+  if (button) {
+    button.textContent = theme === 'dark' ? '☀︎' : '⏾';
+    button.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`);
+  }
+}
+
+function getPreferredTheme() {
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function initTheme() {
+  const stored = localStorage.getItem(THEME_STORAGE_KEY);
+  const theme = stored || getPreferredTheme();
+  setTheme(theme);
+
+  const button = document.getElementById('themeToggle');
+  if (button) {
+    button.addEventListener('click', () => {
+      const current = document.body.classList.contains('dark') ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+      localStorage.setItem(THEME_STORAGE_KEY, next);
+    });
+  }
+}
+
 // initial render and automatic date switching
 let lastDateKey = new Date().toISOString().split('T')[0];
 function checkAndUpdate() {
@@ -45,6 +77,7 @@ function checkAndUpdate() {
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
+  initTheme();
   renderForDate(new Date());
   // check once a minute for date change (covers midnight change)
   setInterval(checkAndUpdate, 60 * 1000);

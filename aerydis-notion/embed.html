@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -8,10 +8,12 @@
 </head>
 <body>
   <div class="embed-container">
-    <div id="currentDay" class="day-label"></div>
+    <div class="embed-header">
+      <div id="currentDay" class="day-label"></div>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">🌙 Dark</button>
+    </div>
     <div id="embed-timetable"></div>
   </div>
-
   <script src="embed.js"></script>
 </body>
 </html>
