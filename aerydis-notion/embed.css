@@ -1,10 +1,14 @@
 ﻿body{background:#ffffff;color:#37352f;margin:0;font-family:Courier New, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;padding:12px}
 body.dark{background:#191919;color:#f8fafc}
 .embed-container{max-width:720px;margin:0 auto;padding:0}
-.embed-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.day-label{color:#6b7280;font-size:0.9rem}
-.theme-toggle{background:transparent;color:inherit;border:none;padding:6px 10px;font-size:0.95rem;cursor:pointer;opacity:0.85}
-.theme-toggle:hover{opacity:1}
+.embed-header{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.day-label{color:#6b7280;font-size:0.9rem;margin-right:20px}
+.day-picker-group{display:flex;align-items:center;gap:10px;margin-left:auto;flex-wrap:wrap}
+.dayPicker,.theme-toggle{background:transparent;color:inherit;border:none;padding:0;font:inherit;font-size:0.85rem;line-height:inherit;cursor:pointer}
+.dayPicker{opacity:0.45;transition:opacity .2s ease,font-weight .2s ease}
+.dayPicker.active{opacity:1}
+.dayPicker:hover,.theme-toggle:hover{opacity:1}
+.theme-toggle{padding:6px 0;margin-left:8px;opacity:0.85}
 #embed-timetable{margin-top:12px}
 .slot{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center;padding:6px 0}
 .slot + .slot{border-top:0.2px solid rgba(107,114,128,0.18)}
@@ -12,4 +16,4 @@ body.dark .slot + .slot{border-color:rgba(148,163,184,0.2)}
 .slot-period{color:#717171;font-weight:500}
 body.dark .slot-period{color:#b8b8b8}
 .slot-subject{color:inherit;font-weight:500}
-@media (max-width:420px){.slot{grid-template-columns:36px 1fr;padding:4px 0}.embed-container{padding:0}}
+@media (max-width:420px){.slot{grid-template-columns:36px 1fr;padding:4px 0}.embed-container{padding:0}.day-picker-group{gap:8px}}
