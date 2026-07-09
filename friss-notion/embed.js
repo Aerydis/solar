@@ -13,14 +13,23 @@ function getDayNameFromDate(date) {
   return date.toLocaleDateString('en-US', { weekday: 'long' }).toLowerCase();
 }
 
-function renderForDate(date) {
-  const day = getDayNameFromDate(date);
+function setActiveDay(dayName) {
+  const normalizedDay = dayName.toLowerCase();
+  document.querySelectorAll('.dayPicker').forEach((button) => {
+    const isActive = button.id === normalizedDay;
+    button.classList.toggle('active', isActive);
+    button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+  });
+}
+
+function renderSchedule(dayName) {
+  const normalizedDay = dayName.toLowerCase();
   const container = document.getElementById('embed-timetable');
   const dayLabel = document.getElementById('currentDay');
 
-  dayLabel.textContent = day.charAt(0).toUpperCase() + day.slice(1);
+  dayLabel.textContent = normalizedDay.charAt(0).toUpperCase() + normalizedDay.slice(1);
 
-  const schedule = timetable[day] || {};
+  const schedule = timetable[normalizedDay] || {};
   const periods = ['p1','p2','p3','p4','p5','p6','p7'];
 
   let html = '';
@@ -31,6 +40,12 @@ function renderForDate(date) {
   });
 
   container.innerHTML = html;
+  setActiveDay(normalizedDay);
+}
+
+function renderForDate(date) {
+  const day = getDayNameFromDate(date);
+  renderSchedule(day);
 }
 
 const THEME_STORAGE_KEY = 'solarEmbedTheme';
@@ -76,8 +91,15 @@ function checkAndUpdate() {
   }
 }
 
+function initDayPickers() {
+  document.querySelectorAll('.dayPicker').forEach((button) => {
+    button.addEventListener('click', () => renderSchedule(button.id));
+  });
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
   initTheme();
+  initDayPickers();
   renderForDate(new Date());
   // check once a minute for date change (covers midnight change)
   setInterval(checkAndUpdate, 60 * 1000);
