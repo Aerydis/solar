@@ -1,12 +1,22 @@
 // Simplified embeddable timetable for Notion
 const timetable = {
-  monday: { p1: "english", p2: "calculus", p3: "chemistry", p4: "korean", p5: "algebra", p6: "art", p7: "software" },
-  tuesday: { p1: "software", p2: "korean", p3: "algebra", p4: "(homeroom activities)", p5: "engineering", p6: "english", p7: "chemistry" },
-  wednesday: { p1: "english", p2: "korean", p3: "chemistry", p4: "calculus", p5: "sports science", p6: "algebra", p7: "engineering (free period)" },
-  thursday: { p1: "software (free period)", p2: "chemistry", p3: "calculus", p4: "korean", p5: "engineering", p6: "algebra", p7: "art" },
-  friday: { p1: "(homeroom activities)", p2: "calculus", p3: "engineering", p4: "english", p5: "software", p6: "(free period)", p7: "A.C.E." },
-  saturday: { p1: "physics academy(14:00-16:30)", p2: "korean academy(19:00-22:00)" },
-  sunday: { p1: "chemistry academy(14:00-16:30)" }
+  monday: { p1: "geometry", p2: "chemistry", p3: "english", p4: "calculus", p5: "literature", p6: "?", p7: "physics" },
+  tuesday: { p1: "calculus", p2: "chemistry", p3: "english", p4: "data science", p5: "geometry", p6: "literature", p7: "physics" },
+  wednesday: { p1: "data science", p2: "calculus", p3: "english", p4: "music", p5: "physics", p6: "literature", p7: "career (free period)"},
+  thursday: { p1: "geometry", p2: "chemistry", p3: "english", p4: "physics", p5: "calculus", p6: "data science", p7: "?" },
+  friday: { p1: "(homeroom activities)", p2: "data science", p3: "geometry", p4: "?", p5: "literature", p6: "chemistry", p7: "A.C.E." },
+  saturday: { p1: "physics(14:00-16:30)", p2: "korean(19:00-22:00)" },
+  sunday: { p1: "chemistry(14:00-16:30)", p2: "korean(19:00-20:30)" }
+};
+
+const classroomMap = {
+  monday: { p1: "class 3", p2: "class 8", p3: "class 2", p4: "class 7", p5: "class 6", p6: "", p7: "physics room" },
+  tuesday: { p1: "class 7", p2: "class 8", p3: "class 2", p4: "computer lab", p5: "class 3", p6: "class 6", p7: "physics room"},
+  wednesday: { p1: "computer lab", p2: "class 7", p3: "class 2", p4: "music room", p5: "physics room", p6: "class 6", p7: "class 3"},
+  thursday: { p1: "class 3", p2: "class 8", p3: "class 2", p4: "physics room", p5: "class 7", p6: "computer lab", p7: "" },
+  friday: { p1: "class 3", p2: "computer lab", p3: "class 3", p4: "", p5: "class 6", p6: "class 8", p7: "computer lab" },
+  saturday: { p1: "", p2: "" },
+  sunday: { p1: "", p2: "" }
 };
 
 function getDayNameFromDate(date) {
@@ -36,7 +46,8 @@ function renderSchedule(dayName) {
   periods.forEach((p)=>{
     const periodNum = p.slice(1);
     const subject = schedule[p] || '-';
-    html += `<div class="slot"><div class="slot-period">${periodNum}</div><div class="slot-subject">${subject}</div></div>`;
+    const classroom = classroomMap[normalizedDay]?.[p] || '';
+    html += `<div class="slot"><div class="slot-period">${periodNum}</div><div class="slot-subject">${subject}</div><div class="slot-room">${classroom}</div></div>`;
   });
 
   container.innerHTML = html;

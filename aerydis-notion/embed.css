@@ -10,10 +10,12 @@ body.dark{background:#191919;color:#f8fafc}
 .dayPicker:hover,.theme-toggle:hover{opacity:1}
 .theme-toggle{padding:6px 0;margin-left:8px;opacity:0.85}
 #embed-timetable{margin-top:12px}
-.slot{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center;padding:6px 0}
+.slot{display:grid;grid-template-columns:44px minmax(0,1fr) 88px;gap:8px;align-items:center;padding:6px 0}
 .slot + .slot{border-top:0.2px solid rgba(107,114,128,0.18)}
 body.dark .slot + .slot{border-color:rgba(148,163,184,0.2)}
 .slot-period{color:#717171;font-weight:500}
 body.dark .slot-period{color:#b8b8b8}
 .slot-subject{color:inherit;font-weight:500}
-@media (max-width:420px){.slot{grid-template-columns:36px 1fr;padding:4px 0}.embed-container{padding:0}.day-picker-group{gap:8px}}
+.slot-room{justify-self:end;min-width:80px;text-align:right;color:#8a8a8a;font-size:0.8rem;line-height:1.2}
+body.dark .slot-room{color:#94a3b8}
+@media (max-width:420px){.slot{grid-template-columns:36px minmax(0,1fr) 60px;padding:4px 0}.embed-container{padding:0}.day-picker-group{gap:8px}.slot-room{font-size:0.72rem;min-width:52px}}
