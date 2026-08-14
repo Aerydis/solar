@@ -1,12 +1,22 @@
 // Simplified embeddable timetable for Notion
 const timetable = {
-  monday: { p1: "(free period)", p2: "ethics", p3: "geography", p4: "english", p5: "society", p6: "algebra", p7: "art" },
-  tuesday: { p1: "algebra", p2: "society", p3: "career", p4: "geography", p5: "inquiry", p6: "ethics", p7: "literature" },
-  wednesday: { p1: "inquiry", p2: "geography", p3: "english", p4: "ethics", p5: "literature", p6: "society", p7: "(free period)" },
-  thursday: { p1: "literature", p2: "inquiry",p3: "ethics", p4: "geography", p5: "english", p6: "art", p7: "algebra" },
-  friday: { p1: "inquiry", p2: "p.e.", p3: "literature", p4: "society", p5: "english", p6: "algebra", p7: "discussion" },
+  monday: { p1: "(free period)", p2: "music", p3: "english", p4: "ethics", p5: "creative research", p6: "korean", p7: "language inquiry" },
+  tuesday: { p1: "calculus", p2: "ethics", p3: "geography", p4: "sports culture", p5: "english", p6: "korean", p7: "creative research" },
+  wednesday: { p1: "english", p2: "careers", p3: "ethics", p4: "geography", p5: "language inquiry", p6: "calculus", p7: "(free period)"},
+  thursday: { p1: "korean", p2: "calculus", p3: "creative research", p4: "english", p5: "ethics", p6: "geography", p7: "language inquiry" },
+  friday: { p1: "creative research", p2: "korean", p3: "geography", p4: "language inquiry", p5: "calculus", p6: "music", p7: "(school club)" },
   saturday: {},
   sunday: {}
+};
+
+const classroomMap = {
+  monday: { p1: "208", p2: "202", p3: "204", p4: "209", p5: "201", p6: "205", p7: "201" },
+  tuesday: { p1: "206", p2: "209", p3: "209", p4: "202", p5: "204", p6: "205", p7: "201"},
+  wednesday: { p1: "204", p2: "202", p3: "209", p4: "209", p5: "201", p6: "206", p7: ""},
+  thursday: { p1: "205", p2: "206", p3: "201", p4: "204", p5: "209", p6: "209", p7: "201" },
+  friday: { p1: "201", p2: "205", p3: "209", p4: "201", p5: "206", p6: "202", p7: "" },
+  saturday: { p1: "", p2: "" },
+  sunday: { p1: "", p2: "" }
 };
 
 function getDayNameFromDate(date) {
@@ -36,7 +46,8 @@ function renderSchedule(dayName) {
   periods.forEach((p)=>{
     const periodNum = p.slice(1);
     const subject = schedule[p] || '-';
-    html += `<div class="slot"><div class="slot-period">${periodNum}</div><div class="slot-subject">${subject}</div></div>`;
+    const classroom = classroomMap[normalizedDay]?.[p] || '';
+    html += `<div class="slot"><div class="slot-period">${periodNum}</div><div class="slot-subject">${subject}</div><div class="slot-room">${classroom}</div></div>`;
   });
 
   container.innerHTML = html;
@@ -104,5 +115,3 @@ document.addEventListener('DOMContentLoaded', ()=>{
   // check once a minute for date change (covers midnight change)
   setInterval(checkAndUpdate, 60 * 1000);
 });
-
-// i love you friss <3
