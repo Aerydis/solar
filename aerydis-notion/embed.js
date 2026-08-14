@@ -4,7 +4,7 @@ const timetable = {
   tuesday: { p1: "calculus", p2: "chemistry", p3: "english", p4: "data science", p5: "geometry", p6: "literature", p7: "physics" },
   wednesday: { p1: "data science", p2: "calculus", p3: "english", p4: "music", p5: "physics", p6: "literature", p7: "career (free period)"},
   thursday: { p1: "geometry", p2: "chemistry", p3: "english", p4: "physics", p5: "calculus", p6: "data science", p7: "?" },
-  friday: { p1: "(homeroom activities)", p2: "data science", p3: "geometry", p4: "?", p5: "literature", p6: "chemistry", p7: "A.C.E." },
+  friday: { p1: "(homeroom activities)", p2: "(free period)", p3: "geometry", p4: "(free period)", p5: "literature", p6: "chemistry", p7: "A.C.E." },
   saturday: { p1: "physics(14:00-16:30)", p2: "korean(19:00-22:00)" },
   sunday: { p1: "chemistry(14:00-16:30)", p2: "korean(19:00-20:30)" }
 };
@@ -14,7 +14,7 @@ const classroomMap = {
   tuesday: { p1: "class 7", p2: "class 8", p3: "class 2", p4: "computer lab", p5: "class 3", p6: "class 6", p7: "physics room"},
   wednesday: { p1: "computer lab", p2: "class 7", p3: "class 2", p4: "music room", p5: "physics room", p6: "class 6", p7: "class 3"},
   thursday: { p1: "class 3", p2: "class 8", p3: "class 2", p4: "physics room", p5: "class 7", p6: "computer lab", p7: "" },
-  friday: { p1: "class 3", p2: "computer lab", p3: "class 3", p4: "", p5: "class 6", p6: "class 8", p7: "computer lab" },
+  friday: { p1: "class 3", p2: "computer lab", p3: "class 3", p4: "class 5", p5: "class 6", p6: "class 8", p7: "computer lab" },
   saturday: { p1: "", p2: "" },
   sunday: { p1: "", p2: "" }
 };
