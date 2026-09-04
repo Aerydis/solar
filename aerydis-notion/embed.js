@@ -60,6 +60,7 @@ function renderForDate(date) {
 }
 
 const THEME_STORAGE_KEY = 'solarEmbedTheme';
+const BACKGROUND_STORAGE_KEY = 'solarEmbedBackground';
 
 function setTheme(theme) {
   const body = document.body;
@@ -91,6 +92,31 @@ function initTheme() {
   }
 }
 
+function setBackground(isVisible) {
+  document.body.classList.toggle('background-hidden', !isVisible);
+  const button = document.getElementById('backgroundToggle');
+  if (button) {
+    button.textContent = isVisible ? '✦' : '✧';
+    button.setAttribute('aria-label', `${isVisible ? 'Hide' : 'Show'} background`);
+    button.setAttribute('aria-pressed', isVisible ? 'true' : 'false');
+  }
+}
+
+function initBackgroundToggle() {
+  const stored = localStorage.getItem(BACKGROUND_STORAGE_KEY);
+  const isVisible = stored !== 'hidden';
+  setBackground(isVisible);
+
+  const button = document.getElementById('backgroundToggle');
+  if (button) {
+    button.addEventListener('click', () => {
+      const nextIsVisible = document.body.classList.contains('background-hidden');
+      setBackground(nextIsVisible);
+      localStorage.setItem(BACKGROUND_STORAGE_KEY, nextIsVisible ? 'visible' : 'hidden');
+    });
+  }
+}
+
 // initial render and automatic date switching
 let lastDateKey = new Date().toISOString().split('T')[0];
 function checkAndUpdate() {
@@ -110,6 +136,7 @@ function initDayPickers() {
 
 document.addEventListener('DOMContentLoaded', ()=>{
   initTheme();
+  initBackgroundToggle();
   initDayPickers();
   renderForDate(new Date());
   // check once a minute for date change (covers midnight change)
